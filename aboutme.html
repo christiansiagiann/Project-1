@@ -1,0 +1,152 @@
+<!--khusus untuk modal, css dan js digabung di aboutme.html-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="home.css">
+<script type="text/javascript" src="home.js"></script>
+<style>
+.bga { /*background aboutme*/
+  background-color: rgb(28, 7, 122);
+}
+.biru {
+  background-color: rgb(0, 89, 255);
+  padding: 20px;
+  margin-top: -20px;
+  margin-left: -20px;
+  margin-right: -20px;
+  color: wheat;
+}
+.biru1{
+  background-color: rgb(0, 89, 255);
+  padding: 20px;
+  margin-bottom: -20.2px;
+  margin-left: -20px;
+  margin-right: -20px;
+  color: wheat;
+}
+/* popup resource*/
+.modal {
+  display: none; 
+  position: fixed; 
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4); 
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.aboutgroup {
+      margin-top: 100px;
+      text-align: center;
+      display: block;
+}
+/*foto*/
+#circle {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+#profile {
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  text-align: center;
+}    
+.ig {
+  width: 40px;
+  height: 40px;
+  transition: 0.4s;
+}
+.ig:hover {
+  transform: scale(1.2);
+} 
+.about {
+  background-color:  rgb(28, 7, 122);
+  border: 1px solid green;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  width: 200px;
+  left: 43%;  
+}
+.about:hover{
+  background-color: blueviolet;
+  color: white;
+}
+.nim {
+  margin-right: 30px;
+}
+</style>
+</head>
+<body class="bga">
+  <div class="aboutgroup">
+    <img id="circle" src="skill.png"/>        
+      <div id="profile">
+        <h2>Christian Andreas</h2>
+        <a class="nim">38106</a>
+        <a class="kelas">PTI CL</a><br>
+        <a href="https://www.instagram.com/christiansiagiann/" target="_blank">
+        <img class="ig" src="instagram.png" onMouseOver="this.src='instagramold.png';" onMouseOut="this.src='instagram.png'" /></a><br>
+      </div>
+    <button id="rsc" class="about">Resource</button><br><br>
+    <button onclick="balik()" class="about">Back to Home</button>
+      <div id="myModal" class="modal"><br><br>
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p class="biru">My Resource</p>
+          <p>w3school.com</p>
+          <p>youtube.com</p>
+          <p>Special Thanks to:</p>
+          <p>Aries Firmansyah (37991)</p>
+          <p class="biru1">©Christian Andreas</p>
+        </div>
+      </div>
+  </div>
+<script>
+//modal resource
+var modal = document.getElementById("myModal");
+var btn = document.getElementById("rsc");
+var span = document.getElementsByClassName("close")[0]; 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+span.onclick = function() {
+  modal.style.display = "none";
+}
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+//fungsi balik
+function balik() {
+  alert("back to home again!");
+  document.getElementById(" ").innerHTML = window.location.href = "home.html";
+}
+</script>
+</body>
+</html>
